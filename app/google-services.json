@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "920469668947",
+    "firebase_url": "https://kardischatbot.firebaseio.com",
+    "project_id": "kardischatbot",
+    "storage_bucket": "kardischatbot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920469668947:android:d3729db1601e47f7",
+        "android_client_info": {
+          "package_name": "com.dinesh.kandili.kardischatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920469668947-ls7ppn0d2o1ltqades5cfgm3rtrb2jeq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dinesh.kandili.kardischatbot",
+            "certificate_hash": "78decd5082183f4ac07d03f439eaa2de1ba08a2a"
+          }
+        },
+        {
+          "client_id": "920469668947-ubshsu48pl9s71ukt807rqlq1g12igtm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHsfN6cGRx_92xcHTDPSHNrIxmAINW10A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920469668947-ubshsu48pl9s71ukt807rqlq1g12igtm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
