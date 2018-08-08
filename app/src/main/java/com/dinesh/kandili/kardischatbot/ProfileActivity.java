@@ -26,6 +26,7 @@ import com.squareup.picasso.Picasso;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -47,6 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference mFriendReqDatabase;
     private DatabaseReference mFriendDatabase;
     private DatabaseReference mNotificationDatabase;
+    private DatabaseReference mRootRef;
 
     private FirebaseUser mCurrentUser;
 
@@ -77,6 +79,7 @@ public class ProfileActivity extends AppCompatActivity {
         mProfileDecReqBtn.setEnabled(false);
 
 
+        mRootRef = FirebaseDatabase.getInstance().getReference();
         usersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(user_Id);
         mFriendReqDatabase = FirebaseDatabase.getInstance().getReference().child("Friend_req");
         mFriendDatabase = FirebaseDatabase.getInstance().getReference().child("Friends");
