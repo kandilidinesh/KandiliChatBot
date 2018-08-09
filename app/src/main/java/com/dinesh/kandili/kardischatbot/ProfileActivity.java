@@ -62,6 +62,14 @@ public class ProfileActivity extends AppCompatActivity {
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         final String user_Id= getIntent().getStringExtra("userId");
+       /* final String user_id;
+        String data = getIntent().getStringExtra("user_id");
+        if (data == null) {
+            user_id = getIntent().getStringExtra("from_user_id");
+        } else {
+            user_id = getIntent().getStringExtra("user_id");
+        }*/
+
 
         regProgress= new ProgressDialog(this);
         regProgress.setTitle("Loading...");
@@ -244,7 +252,7 @@ public class ProfileActivity extends AppCompatActivity {
                 if(mCurrentState.equals("req_recieved"))
                 {
                     final String date = DateFormat.getDateInstance().format(new Date());
-                    mFriendDatabase.child(mCurrentUser.getUid()).child(user_Id).setValue(date).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    mFriendDatabase.child(mCurrentUser.getUid()).child(user_Id).child("date").setValue(date).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             mFriendDatabase.child(user_Id).child(mCurrentUser.getUid()).setValue(date).addOnSuccessListener(new OnSuccessListener<Void>() {
