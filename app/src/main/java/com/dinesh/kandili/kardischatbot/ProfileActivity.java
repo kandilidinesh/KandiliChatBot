@@ -24,6 +24,7 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -242,7 +243,6 @@ public class ProfileActivity extends AppCompatActivity {
                                     mCurrentState="not_friends";
                                     mProfileDecReqBtn.setVisibility(View.INVISIBLE);
                                     mProfileDecReqBtn.setEnabled(false);
-
                                 }
                             });
                         }
@@ -251,11 +251,16 @@ public class ProfileActivity extends AppCompatActivity {
 
                 if(mCurrentState.equals("req_recieved"))
                 {
-                    final String date = DateFormat.getDateInstance().format(new Date());
-                    mFriendDatabase.child(mCurrentUser.getUid()).child(user_Id).child("date").setValue(date).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    Date date = new Date();
+                    SimpleDateFormat format;
+                    format = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+                    final String DateToStr = format.format(date);
+
+
+                    mFriendDatabase.child(mCurrentUser.getUid()).child(user_Id).child("date").setValue(DateToStr).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            mFriendDatabase.child(user_Id).child(mCurrentUser.getUid()).setValue(date).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            mFriendDatabase.child(user_Id).child(mCurrentUser.getUid()).child("date").setValue(DateToStr).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
 
